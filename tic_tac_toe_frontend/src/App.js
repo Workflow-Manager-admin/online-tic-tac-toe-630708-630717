@@ -46,4 +46,26 @@ function App() {
   );
 }
 
+Square.propTypes = {
+  value: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+  isWinning: PropTypes.bool
+};
+
+Square.defaultProps = {
+  value: null,
+  isWinning: false
+};
+
+Board.propTypes = {
+  squares: PropTypes.arrayOf(PropTypes.string),
+  onClick: PropTypes.func.isRequired,
+  winningLine: PropTypes.arrayOf(PropTypes.number)
+};
+
+Board.defaultProps = {
+  squares: Array(9).fill(null),
+  winningLine: null
+};
+
 export default App;
